@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package projectmansys;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
 /**
  *
  * @author PCC
@@ -15,8 +22,15 @@ public class AdvisorList extends javax.swing.JFrame {
      */
     public AdvisorList() {
         initComponents();
+         Action add = new AbstractAction() {
+             @Override
+             public void actionPerformed (ActionEvent e){
+                 
+             }
+             
+         };
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,6 +42,7 @@ public class AdvisorList extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         model = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Advisor's Settings");
@@ -37,7 +52,7 @@ public class AdvisorList extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Names", "Project Name", "Project  Title", "Designation", ""
+                "Names", "Project Name", "Project  Title", "Designation", "Edit"
             }
         ) {
             Class[] types = new Class [] {
@@ -49,22 +64,37 @@ public class AdvisorList extends javax.swing.JFrame {
             }
         });
         model.setName(""); // NOI18N
+        model.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modelMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(model);
         model.getAccessibleContext().setAccessibleName("");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
-        );
+        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
+
+        jButton1.setText("Done");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void modelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modelMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        committeeMan f=new committeeMan();
+        this.setVisible(false);
+        f.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,7 +122,7 @@ public class AdvisorList extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AdvisorList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -102,6 +132,7 @@ public class AdvisorList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable model;
     // End of variables declaration//GEN-END:variables

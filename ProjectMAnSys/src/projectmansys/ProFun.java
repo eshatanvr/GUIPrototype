@@ -324,12 +324,18 @@ public class ProFun extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showConfirmDialog(null,"are you sure?");
+        ProMan f=new ProMan();
+        this.setVisible(false);
+        f.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         
         JOptionPane.showConfirmDialog(null,"are you sure?");
+          ProMan f=new ProMan();
+        this.setVisible(false);
+        f.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -348,7 +354,11 @@ public class ProFun extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        
         JOptionPane.showConfirmDialog(null,"are you sure?");
+          ProMan f=new ProMan();
+        this.setVisible(false);
+        f.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
