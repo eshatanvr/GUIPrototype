@@ -132,10 +132,15 @@ public class Std extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         String rgNo1=regNo1.toString();
         String rgNo2=regNo2.toString();
         String rgNo3=regNo3.toString();
-        
+        StdWork f=new StdWork();
+        this.setVisible(false);
+        f.setVisible(true);
+        Group grp=new Group();
+        grp.setGrpID();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -10,41 +10,47 @@ import java.util.*;
  * @author PCC
  */
 public class Group {
-   private String name;
-   private  String regNo;
-    Student obj=new Student(name,regNo);
-    private List<String> grpList;
-    private String grpID ;
-    
-    public void setName(String name) {
-        this.name = obj.getStdName();
+    private int grpID ;
+   private List<Student> stdList;
+    Group(){
+    stdList=new ArrayList<Student>();
+}
+    private int searchRegNo(Std rgNo1,Std rgNo2,Std rgNo3)
+    {
+        int index =-1;
+         for(int i = 0 ; i  < stdList.size(); i++)
+         {
+             if(stdList.get(i).getStdReg().equals(rgNo1))
+             {
+                 index = i;
+                 break;
+             }
+         }
+          for(int i = 0 ; i  < stdList.size(); i++)
+         {
+             if(stdList.get(i).getStdReg().equals(rgNo2))
+             {
+                 index = i;
+                 break;
+             }
+         }
+           for(int i = 0 ; i  < stdList.size(); i++)
+         {
+             if(stdList.get(i).getStdReg().equals(rgNo3))
+             {
+                 index = i;
+                 break;
+             }
+         }
+        return index;
     }
-
-    public void setRegNo(String regNo) {
-        this.regNo = regNo;
-    }
-
-    public void setGrpList(List<String> grpList) {
-        this.grpList = grpList;
-    }
-
-    public void setGrpID(String grpID) {
+   
+    public void setGrpID() {
         this.grpID = grpID+1;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getRegNo() {
-        return regNo;
-    }
-
-    public List<String> getGrpList() {
-        return grpList;
-    }
-
-    public String getGrpID() {
+    public int getGrpID() {
         return grpID;
     }
     
